@@ -5,15 +5,35 @@ public class Main {
         System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
         System.out.println("estVide: " + data.estVide());
-/*
-        System.out.println("\nTest 2: Ajout d'éléments à la fin du vecteur");
+
+        System.out.println("\nTest 2: Ajout d'éléments à la fin de la liste");
         data.ajouter(0);
         data.ajouter(10);
         data.ajouter(20);
+        data.ajouter(40);
         System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
         System.out.println("estVide: " + data.estVide());
 
+        System.out.println("\nTest 3: Ajouts d'éléments au début de la liste");
+        data.ajouterD(0);
+        data.ajouterD(3);
+        data.ajouterD(8);
+        data.ajouterD(9);
+        data.ajouterD(10);
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 4: Ajouts d'éléments à des positions spécifiques");
+        data.ajouter(-10, 0);
+        data.ajouter(25, 2);
+        data.ajouter(60, 5);
+        data.ajouter(70, 3);
+        data.ajouter(80, 1);
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
+
+/*
         System.out.println("\nTest 3: Ajouts d'éléments jusqu'à ce que la capacité du vecteur augmente");
         data.ajouter(30);
         data.ajouter(40);
@@ -27,14 +47,7 @@ public class Main {
         System.out.println("idx5 : " + data.getElementAt(5)); // 50
         System.out.println(data);
 
-        System.out.println("\nTest 5: Ajouts d'éléments à des positions spécifiques");
-        data.ajouter(-10, 0);
-        data.ajouter(25, 4);
-        data.ajouter(60, 8);
-        data.ajouter(70, 9);
-        data.ajouter(80, 10);
-        System.out.println(data);
-        System.out.println("nbElements: " + data.getNbElements());
+
 
         System.out.println("\nTest 6: Ajouts d'éléments à des positions invalides");
         System.out.println("index négatif: " + data.ajouter(99, -1));

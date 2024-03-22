@@ -9,15 +9,28 @@ public class Liste {
 
     public String toString() {
         String str = "[";
-        for (Noeud courant = premier; courant != null; courant = courant.suivant)
-            str +=  ", " + courant;
+        for (Noeud courant = premier; courant != null; courant = courant.suivant) {
+            if (courant.suivant == null) {
+                str += courant.valeur;
+            } else {
+                str += courant.valeur + ", ";
+            }
+        }
         return str + "]";
     }
-/*
+
+
     public int getElementAt(int index) {
-        return tableau[index];
+        int indexCourant = 0;
+        for (Noeud courant = premier; courant != null; courant = courant.suivant){
+            if (indexCourant == index)
+                return courant.valeur;
+            else
+                indexCourant++;
+        }
+        return -1;
     }
-*/
+
     public int getNbElements() {
         return nbElements;
     }
@@ -25,24 +38,60 @@ public class Liste {
     public boolean estVide() {
         return nbElements == 0;
     }
-/*
+
     public void ajouter(int element) {
-        ajouter(element, nbElements);
-    }
-
-    public boolean ajouter(int element, int index) {
-        if (index < 0 || index > nbElements)
-            //throw new IndexOutOfBoundsException();
-            return false;
-        if (nbElements >= tableau.length)
-            resize();
-        for (int i = nbElements; i > index; i--)
-            tableau[i] = tableau[i - 1];
-        tableau[index] = element;
+        if (premier == null) {
+            premier = new Noeud();
+            premier.valeur = element;
+            premier.suivant = null;
+        } else {
+            Noeud dernier = premier;
+            while (dernier.suivant != null)
+                dernier = dernier.suivant;
+            dernier.suivant = new Noeud();
+            dernier = dernier.suivant;
+            dernier.valeur = element;
+            dernier.suivant = null;
+        }
         nbElements++;
-        return true;
     }
 
+    public void ajouterD(int element) {
+        Noeud nouveau = new Noeud();
+        nouveau.valeur = element;
+        if (premier == null) {
+            premier = new Noeud();
+            premier.valeur = element;
+            premier.suivant = null;
+        } else {
+            nouveau.suivant = premier;
+        }
+        premier = nouveau;
+        nbElements++;
+    }
+
+    public void ajouter(int element, int index) {
+        if (index == 0) {
+            ajouterD(element);
+            return;
+        }
+        if (index < 0)
+            return;
+        Noeud nouveau = new Noeud();
+        nouveau.valeur = element;
+        Noeud courant = premier;
+        int i = 0;
+        while (i < index - 1 && courant != null) {
+            courant = courant.suivant;
+            i++;
+        }
+        if (courant == null)
+            return;
+        nouveau.suivant = courant.suivant;
+        courant.suivant = nouveau;
+        nbElements++;
+    }
+/*
     public void ajouter(Liste autre) {
         for (int i = 0 ; i < autre.getNbElements(); i++)
             this.ajouter(autre.getElementAt(i));
@@ -95,6 +144,5 @@ public class Liste {
     public void effacerTout() {
         tableau = new int[TAILLE_INITIALE];
         nbElements = 0;
-    }
- */
+    */
 }

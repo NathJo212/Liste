@@ -28,11 +28,23 @@ public class Main {
         data.ajouter(-10, 0);
         data.ajouter(25, 2);
         data.ajouter(60, 5);
-        data.ajouter(70, 3);
-        data.ajouter(80, 1);
+        data.ajouter(70, 12);
         System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
 
+        System.out.println("\nTest 5: Enlever éléments à la fin");
+        data.effaceD();
+        data.effaceD();
+        data.effaceD();
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 5: Enlever éléments au début");
+        data.efface();
+        data.efface();
+        data.efface();
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
 /*
         System.out.println("\nTest 3: Ajouts d'éléments jusqu'à ce que la capacité du vecteur augmente");
         data.ajouter(30);

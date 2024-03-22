@@ -91,6 +91,26 @@ public class Liste {
         courant.suivant = nouveau;
         nbElements++;
     }
+
+    public void efface(){
+        if (premier != null){
+            premier = premier.suivant;
+            nbElements--;
+        }
+    }
+    public void effaceD(){
+        Noeud courant = premier;
+        if (premier != null){
+            int index = 0;
+            int avantDernier = nbElements-2;
+            while (index != avantDernier){
+                courant = courant.suivant;
+                index++;
+            }
+            courant.suivant = null;
+            nbElements--;
+        }
+    }
 /*
     public void ajouter(Liste autre) {
         for (int i = 0 ; i < autre.getNbElements(); i++)

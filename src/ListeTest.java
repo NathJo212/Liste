@@ -1,4 +1,4 @@
-/*import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -75,4 +75,4 @@ class ListeTest {
     @org.junit.jupiter.api.Test
     void testEffacerTout() {
     }
-}*/
+}

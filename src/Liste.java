@@ -111,6 +111,22 @@ public class Liste {
             nbElements--;
         }
     }
+    public void efface(int index){
+        if(index == 0){
+            premier = premier.suivant;
+        }else {
+            Noeud courant = premier;
+            int i = 0;
+            while (i < index - 1 && courant != null) {
+                courant = courant.suivant;
+                i++;
+            }
+            if (courant != null && courant.suivant != null) {
+                courant.suivant = courant.suivant.suivant;
+                nbElements--;
+            }
+        }
+    }
 /*
     public void ajouter(Liste autre) {
         for (int i = 0 ; i < autre.getNbElements(); i++)

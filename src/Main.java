@@ -27,6 +27,18 @@ public class Main {
         System.out.println("idx3 : " + data.getElementAt(3)); // 30
         System.out.println("idx5 : " + data.getElementAt(5)); // 50
         System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 5: Supprimer premier et dernier");
+        data.efface();
+        data.effaceD();
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
+
+        System.out.println("\nTest 5: Supprimer à emplacement");
+        data.efface(0);
+        System.out.println(data);
+        System.out.println("nbElements: " + data.getNbElements());
 /*
         System.out.println("\nTest 5: Ajouts d'éléments à des positions spécifiques");
         data.ajouter(-10, 0);

@@ -1,6 +1,7 @@
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Allo");
         System.out.println("\nTest 1: Création d'une liste vide");
         Liste data = new Liste();
         System.out.println(data);

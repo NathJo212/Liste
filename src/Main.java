@@ -2,6 +2,7 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("\nTest 1: Création d'une liste vide");
+        System.out.println("allo");
         Liste data = new Liste();
         System.out.println(data);
         System.out.println("nbElements: " + data.getNbElements());
